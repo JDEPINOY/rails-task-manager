@@ -5,3 +5,19 @@
 ul {
   list-style-type: none;
 }
+
+#button{
+  // display: flex;
+  // text-align: center;
+  // justify-content : center;
+  border: solid 1px blue;
+  width: 10%;
+  border-radius: 5px;
+  margin-left: 50%;
+}
+
+.edit{
+  display: flex;
+  justify-content: space-betwwen;
+  align-items: center;
+}

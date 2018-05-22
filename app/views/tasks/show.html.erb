@@ -1,20 +1,26 @@
-<h1><%= @task.title %><h1>
+<div class="container">
+   <div class="edit">
+    <div>
+      <h1><%= @task.title %><h1>
+    </div>
+    <div id="button">
+     <!-- <%= button_to "Edit a task", edit_task_path, :method => :get %> -->
+     <p> <%= link_to " Edit a task", edit_task_path, class: "fas fa-pencil-alt" %></p>
+    </div>
+  </div>
+  <h3><%= @task.details %></h3>
 
-<h3><%= @task.details %></h3>
+  <div>
+    <%= check_box("tag", tag.id, {checked: @task.completed}) %>
+    <% if @task.completed == true %>
+      This task is completed
+    <% else %>
+      This task is not completed yet
+    <% end %>
+  </div>
 
-<p>
-<%= check_box("tag", tag.id, {checked: @task.completed}) %>
-<% if @task.completed == true %>
-  This task is completed
-<% else %>
-  This task is not completed yet
-<% end %>
-</p>
 
-<div>
-  <p> <%= link_to "Edit a task", edit_task_path %></p>
-</div>
-
-<div>
-  <%= link_to "Back to list", tasks_path %>
+  <div>
+    <%= link_to "Back to list", tasks_path %>
+  </div>
 </div>
